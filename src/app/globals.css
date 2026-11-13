@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3f0e8;
+  --foreground: #1e1a15;
+  --surface: #faf8f4;
+  --sidebar: #e8e2d6;
+  --muted: #4e463c;
+  --line: #d9d1c3;
+  --accent: #1b6b4a;
+  --accent-soft: #e4f2ea;
+  --danger: #8c3828;
+  --shadow: 0 1px 0 rgba(30, 26, 21, 0.04);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #141311;
+    --foreground: #f3efe6;
+    --surface: #1c1b18;
+    --sidebar: #221f1b;
+    --muted: #d2c6b6;
+    --line: #3a342c;
+    --accent: #9ed7b8;
+    --accent-soft: #1c2c24;
+    --danger: #f0b4a6;
+    --shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-sidebar: var(--sidebar);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif), ui-serif, Georgia, serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@layer base {
+  button,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+}
+
+textarea {
+  caret-color: var(--accent);
+}
+
+.since-md > :first-child {
+  margin-top: 0;
+}
+
+.since-md > :last-child {
+  margin-bottom: 0;
+}
+
+.since-md p,
+.since-md ul,
+.since-md ol,
+.since-md pre,
+.since-md blockquote {
+  margin: 0.75em 0;
+}
+
+.since-md ul,
+.since-md ol {
+  padding-left: 1.25rem;
+}
+
+.since-md ul {
+  list-style: disc;
+}
+
+.since-md ol {
+  list-style: decimal;
+}
+
+.since-md a {
+  color: var(--accent);
+  text-underline-offset: 0.18em;
+}
+
+.since-md strong {
+  font-weight: 650;
+}
+
+.since-md code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+.since-md :not(pre) > code {
+  background: var(--sidebar);
+  border-radius: 0.25rem;
+  padding: 0.1em 0.35em;
+}
+
+.since-md pre {
+  overflow-x: auto;
+  background: var(--sidebar);
+  border-radius: 0.6rem;
+  padding: 0.8rem 1rem;
+}
+
+.cite {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.status-dot {
+  animation: breathe 1.4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot,
+  .drawer {
+    animation: none;
+    transition: none;
+  }
+}
