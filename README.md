@@ -1,8 +1,13 @@
-# Since
+# Since — Vraj Vaghela, minimi hiring challenge
 
 A chat agent with one tool, web search. It remembers what you asked and when, and it checks whether that answer is still true.
 
-Built by Vraj Vaghela for the minimi software engineering intern challenge. The architecture is in [DESIGN.md](DESIGN.md).
+Vraj Vaghela's submission for the minimi software engineering intern challenge. The architecture is in [DESIGN.md](DESIGN.md).
+
+```bash
+git clone https://github.com/VrajVaghela/minimi-chat-agent.git
+cd minimi-chat-agent
+```
 
 ## Run
 

@@ -1,6 +1,6 @@
-# Since
+# Since — Vraj Vaghela, minimi hiring challenge
 
-Since is a chat agent with one tool, web search. It remembers what you asked, and when, and it checks whether that answer is still true.
+Since is Vraj Vaghela's chat agent for the minimi software engineering intern challenge. It has one tool, web search. It remembers what you asked, and when, and it checks whether that answer is still true.
 
 ## How a turn works
 
